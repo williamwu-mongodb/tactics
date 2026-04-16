@@ -152,7 +152,7 @@ export function getTerrainSprite(terrain: Terrain, frame: number = 0): HTMLCanva
     if (spriteCache.has(key)) return spriteCache.get(key)!;
     const [c, ctx] = createCanvas(TILE_SIZE, TILE_SIZE);
     const drawFn = [drawPlains, drawForest, drawMountain, drawRoad, drawWater, drawBridge][terrain];
-    drawFn(ctx, TILE_SIZE);
+    drawFn(ctx, TILE_SIZE, 0);
     spriteCache.set(key, c);
     return c;
   }
